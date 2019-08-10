@@ -26,7 +26,7 @@ def GetAllCameras():
     cameras = cmds.ls("camera")
     return cameras
 
-def GetRenderableCamera():
+def GetRenderableCameras():
     cameras = GetAllCameras()
     renderCam = [i for i in GetAllCameras() if cmds.getAttr("%s.renderable" % i)]
     return renderCam
@@ -43,7 +43,7 @@ def DisableRenderLayers(renderLayers):
     for rl in renderLayers:
         cmds.setAttr("%s.renderable" % rl, 0)
 
-def SetRenderableCamera(cameras):
+def SetRenderableCameras(cameras):
     if isinstance(cameras, str):
         cameras = [cameras]
     for camera in cameras:
