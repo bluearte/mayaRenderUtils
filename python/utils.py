@@ -9,6 +9,7 @@ def isCamera(camera):
     else:
         cam = cmds.listRelatives(camera, s=True)[0]
         return cam
+    return cam
 
 def GetAllRenderLayers():
     renderlayers = [i for i in cmds.ls(type="renderLayer") if len(i.split(":")) == 1]
